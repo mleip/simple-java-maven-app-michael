@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Hello Jenkins') {
-            steps {
-                sh 'echo Hello World'
-            }
-        }
         stage('Build') {
             steps {
                 sh '/opt/apache-maven-3.8.7/bin/mvn package'
@@ -16,9 +11,9 @@ pipeline {
                 sh '/opt/apache-maven-3.8.7/bin/mvn test'
             }
         }
-        stage('docker image') {
+        stage('Deploy') {
             steps {
-                sh 'docker build -t my-app .'
+                echo 'Deploy'
             }
         }
     }
