@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '/opt/apache-maven-3.8.7/bin/mvn package'
+                sh "/opt/apache-maven-3.8.7/bin/mvn package"
             }
         }
         stage('Test') {
             steps {
-                sh '/opt/apache-maven-3.8.7/bin/mvn test'
+                sh "/opt/apache-maven-3.8.7/bin/mvn test"
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploy'
+                echo "Deploying"
             }
         }
     }
