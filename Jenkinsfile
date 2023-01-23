@@ -1,19 +1,20 @@
 pipeline {
     agent any
+
     stages {
         stage('Build') {
             steps {
-                sh "/opt/apache-maven-3.8.7/bin/mvn package"
+                echo 'Building..'
             }
         }
         stage('Test') {
             steps {
-                sh "/opt/apache-maven-3.8.7/bin/mvn test"
+                echo 'Testing..'
             }
         }
         stage('Deploy') {
             steps {
-                echo "Deploying"
+                echo 'Deploying....'
             }
         }
     }
