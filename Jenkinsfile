@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "/usr/share/maven/bin/mvn package"
+                sh "/opt/apache-maven-3.8.6/bin/mvn package"
             }
         }
         stage('Test') {
             steps {
-                sh "/usr/share/maven/bin/mvn test"
+                sh "/opt/apache-maven-3.8.6/bin/mvn test"
             }
         }
         stage('Deploy') {
