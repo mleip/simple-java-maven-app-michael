@@ -12,9 +12,9 @@ pipeline {
                 sh "/opt/apache-maven-3.8.6/bin/mvn test"
             }
         }
-        stage('Deploy') {
+        stage('docker image') {
             steps {
-                echo 'Deploying....'
+                sh 'docker build -t my-java-app'
             }
         }
     }
